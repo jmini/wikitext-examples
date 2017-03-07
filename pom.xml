@@ -14,6 +14,7 @@
     <modules>
         <module>simple-example</module>
         <module>maven-example</module>
+        <module>maven-with-ant-example</module>
     </modules>
 
     <build>

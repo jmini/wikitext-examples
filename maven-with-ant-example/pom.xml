@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.greensopinion</groupId>
+        <artifactId>wikitext.examples</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <artifactId>wikitext.maven-with-ant-example</artifactId>
+    <name>Mylyn WikiText Maven With Ant Example</name>
+    <packaging>pom</packaging>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.0.2</version>
+                <executions>
+                    <execution>
+                        <id>copy-resources</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>src/</directory>
+                                    <filtering>false</filtering>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-antrun-plugin</artifactId>
+            <version>1.6</version>
+            <executions>
+                <execution>
+                    <phase>generate-sources</phase>
+                    <configuration>
+                        <target>
+                            <taskdef resource="org/eclipse/mylyn/wikitext/ant/tasks.properties"/>
+
+                            <wikitext-to-html markupLanguage="Markdown" formatOutput="true">
+                                <fileset dir="${project.build.directory}" includes="**/*.md"/>
+                                <stylesheet url="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+                            </wikitext-to-html>
+                        </target>
+                    </configuration>
+                    <goals>
+                        <goal>run</goal>
+                    </goals>
+                </execution>
+            </executions>
+            <dependencies>
+                <dependency>
+                    <groupId>org.eclipse.mylyn.docs</groupId>
+                    <artifactId>org.eclipse.mylyn.wikitext</artifactId>
+                    <version>${wikitext.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>org.eclipse.mylyn.docs</groupId>
+                    <artifactId>org.eclipse.mylyn.wikitext.ant</artifactId>
+                    <version>${wikitext.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>org.eclipse.mylyn.docs</groupId>
+                    <artifactId>org.eclipse.mylyn.wikitext.markdown</artifactId>
+                    <version>${wikitext.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>com.google.guava</groupId>
+                    <artifactId>guava</artifactId>
+                    <version>${guava.version}</version>
+                </dependency>
+            </dependencies>
+        </plugin>
+        </plugins>
+    </build>
+</project>
