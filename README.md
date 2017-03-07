@@ -18,4 +18,4 @@ Build using Maven as follows:
 
 `mvn clean verify`
 
-wikitext-examples build status on Travis CI: [![Build Status](https://travis-ci.org/greensopinion/wikitext-examples.svg?branch=master)](https://travis-ci.org/greensopinion/wikitext-examples).
+Build status on Travis CI: [![Build Status](https://travis-ci.org/greensopinion/wikitext-examples.svg?branch=master)](https://travis-ci.org/greensopinion/wikitext-examples)
