@@ -13,6 +13,7 @@
 
     <modules>
         <module>simple-example</module>
+        <module>maven-example</module>
     </modules>
 
     <build>

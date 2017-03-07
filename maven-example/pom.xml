@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.greensopinion</groupId>
+        <artifactId>wikitext.examples</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <artifactId>wikitext.maven-example</artifactId>
+    <name>Mylyn WikiText Maven Example</name>
+    <packaging>pom</packaging>
+
+    <properties>
+        <help.copyrightNotice>Copyright (c) 2017 David Green. All rights reserved.</help.copyrightNotice>
+        <help.title>Maven Example</help.title>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.eclipse.mylyn.docs</groupId>
+                <artifactId>org.eclipse.mylyn.wikitext.maven</artifactId>
+                <version>${wikitext.version}</version>
+                <configuration>
+                    <sourceFolder>src</sourceFolder>
+                    <copyrightNotice>${help.copyrightNotice}</copyrightNotice>
+                    <title>${help.documentTitle}</title>
+                    <multipleOutputFiles>false</multipleOutputFiles>
+                    <navigationImages>false</navigationImages>
+                    <formatOutput>true</formatOutput>
+                    <stylesheetUrls>
+                        <param>https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css</param>
+                    </stylesheetUrls>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>eclipse-help</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
