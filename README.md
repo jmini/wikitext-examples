@@ -10,3 +10,12 @@ Examples
 * [simple-example](simple-example) - simple usage of the Mylyn WikiText APIs, including consuming dependencies using a Maven pom
 * [maven-example](maven-example) - usage of Mylyn WikiText in a Maven pom to generate HTML
 * [maven-with-ant-example](maven-with-ant-example) - usage of Mylyn WikiText Ant tasks in a Maven pom to generate HTML
+
+Building
+---------------------------
+
+Build using Maven as follows:
+
+`mvn clean verify`
+
+See [wikitext-examples on Travis CI](https://travis-ci.org/greensopinion/wikitext-examples).
