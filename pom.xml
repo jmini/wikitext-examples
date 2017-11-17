@@ -7,7 +7,7 @@
     <name>Mylyn WikiText Examples</name>
 
     <properties>
-        <wikitext.version>3.0.11</wikitext.version>
+        <wikitext.version>3.0.19</wikitext.version>
         <guava.version>21.0</guava.version>
     </properties>
 
