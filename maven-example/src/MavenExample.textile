@@ -1,3 +1,0 @@
-h1. Maven Example
-
-This example demonstrates generating HTML directly from a Maven pom. 

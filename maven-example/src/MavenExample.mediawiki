@@ -1,0 +1,3 @@
+== Maven Example ==
+
+This example demonstrates generating HTML directly from a Maven pom (using ''mediawiki'' syntax). 
